@@ -1,5 +1,5 @@
 "use client";
-
+import  {HoverImageLinks}   from './HoverImageLinks';
 import { SiInstagram, SiLinkedin, SiTwitter, SiYoutube } from "react-icons/si";
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -100,7 +100,12 @@ const LinksOverlay = () => {
   return (
     <nav className="fixed right-4 top-4 z-40 h-[calc(100vh_-_32px)] w-[calc(100%_-_32px)] overflow-hidden">
       <div className="pt-20"></div>
-      <LinksContainer />
+      
+        <HoverImageLinks />
+        
+          
+        
+      
       <FooterCTAs />
     </nav>
   );
@@ -220,7 +225,7 @@ const FooterCTAs = () => {
           },
         }}
         exit={{ opacity: 0, y: 8 }}
-        className="absolute bottom-2 right-2 flex items-center gap-2 rounded-full bg-gray-400 px-3 py-3 text-4xl uppercase text-white transition-colors hover:text-[#E15889]  md:bottom-4 md:right-4 md:px-6 md:text-2xl"
+        className="absolute bottom-0 right-0 shadow-sm shadow-gray-400 flex items-center gap-2 rounded-xl bg-black px-3 py-3 text-4xl uppercase text-white transition-colors hover:text-[#E15889]  md:bottom-4 md:right-4 md:px-6 md:text-2xl"
       >
         <span className="hidden md:block">contact us</span> <FiArrowRight />
       </motion.button>
@@ -246,6 +251,11 @@ const LINKS = [
   },
   {
     title: "careers",
+    href: "#4",
+    color: "#DB1359",
+  },
+  {
+    title: "contact",
     href: "#4",
     color: "#DB1359",
   },
