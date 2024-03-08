@@ -79,7 +79,7 @@ export const GridHoverHero = () => {
           Laudantium, reiciendis officia!
         </p>
         <button className="pointer-events-auto rounded-md bg-white px-8 py-4 text-xl font-bold uppercase text-neutral-950 mix-blend-difference">
-          Let's Talk
+          Let's Talk!
         </button>
       </div>
     </div>
