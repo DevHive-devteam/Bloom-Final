@@ -16,8 +16,8 @@ module.exports = {
         bloomYellow: "#FEEC56",
         bloomOrange: "#FEA604",
         bloomRed: "#E73705",
-        bloomPurple: "DB1359",
-        bloomPink: "E15889",
+        bloomPurple: "#DB1359",
+        bloomPink: "#E15889",
       },
       fontFamily: {
         righteous: ["var(--font-righteous)"],

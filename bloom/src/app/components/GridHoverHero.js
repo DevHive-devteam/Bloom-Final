@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useEffect, useState } from "react";
 import { useAnimate } from "framer-motion";
 
@@ -12,25 +12,32 @@ const colors = {
 
 export const GridHoverHero = () => {
   const [scope, animate] = useAnimate();
-  const [size, setSize] = useState({ columns: 0, rows: 0 });
+  const [size, setSize] = useState({
+    columns: 0,
+    rows: 0,
+  });
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
   useEffect(() => {
+    const generateGridCount = () => {
+      if (typeof window !== "undefined") {
+        const columns = Math.floor(window.innerWidth / 75);
+        const rows = Math.floor(window.innerHeight / 75);
+        setSize({
+          columns,
+          rows,
+        });
+      }
+    };
+
+    // Set initial grid size when the component mounts
     generateGridCount();
+
     window.addEventListener("resize", generateGridCount);
 
+    // Cleanup the event listener on component unmount
     return () => window.removeEventListener("resize", generateGridCount);
   }, []);
-
-  const generateGridCount = () => {
-    const columns = Math.floor(document.body.clientWidth / 75);
-    const rows = Math.floor(document.body.clientHeight / 75);
-
-    setSize({
-      columns,
-      rows,
-    });
-  };
 
   const handleMouseLeave = (e) => {
     const id = `#${e.target.id}`;
@@ -46,9 +53,14 @@ export const GridHoverHero = () => {
     animate(
       id,
       { background: colors[colorKeys[nextColorIndex]] },
-      { duration: 0.15 },
+      { duration: 0.15 }
     );
   };
+
+  // Ensure grid only renders when there are columns and rows > 0
+  if (size.columns === 0 || size.rows === 0) {
+    return null;
+  }
 
   return (
     <div className="bg-neutral-950">

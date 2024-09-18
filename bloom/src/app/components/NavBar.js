@@ -5,9 +5,11 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import Image from "next/image";
+import { useNav } from '../context/NavContext';
 
 export const Navbar = () => {
-  const [active, setActive] = useState(false);
+  // uses context from /context/NavContext.js here
+  const { active, setActive } = useNav();
 
   return (
     <>
