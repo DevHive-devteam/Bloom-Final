@@ -49,7 +49,7 @@ const DelayedTwo = ({ children, waitBeforeShow = 500 }) => {
 const CompanyLogo = ({ active }) => {
   return (
     <motion.div
-      className={`fixed left-4 top-4 z-50 h-20 ${active ? "w-20" : "w-60"} rounded-xl bg-black shadow-sm shadow-gray-400  ${active ? "p-3" : "p-1"}`}
+      className={`fixed left-4 top-4 z-50 h-20 ${active ? "w-20" : "w-60"} rounded-xl bg-black  ${active ? "p-3" : "p-1"}`}
       initial={{ width: "80px" }}
       animate={{
         width: active ? "240px" : "80px",
@@ -157,7 +157,7 @@ const HamburgerButton = ({ active, setActive }) => {
         animate={active ? "open" : "closed"}
         variants={UNDERLAY_VARIANTS}
         style={{ top: 16, right: 16 }}
-        className="fixed z-10 rounded-xl bg-black shadow-sm shadow-gray-400"
+        className="fixed z-10 rounded-xl bg-black "
       />
 
       <motion.button

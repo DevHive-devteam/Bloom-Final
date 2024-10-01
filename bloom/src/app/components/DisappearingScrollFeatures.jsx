@@ -27,7 +27,7 @@ const Features = () => {
 
 const Copy = () => {
   return (
-    <div className="flex h-fit w-full flex-col justify-center py-12 md:sticky md:top-0 md:h-screen">
+    <div id="portfolio" className="flex h-fit w-full flex-col justify-center py-12 md:sticky md:top-0 md:h-screen">
       <span className="w-fit rounded-full bg-bloomYellow px-4 py-2 text-sm uppercase text-neutral-900">
         Our work
       </span>
@@ -58,39 +58,33 @@ const Carousel = () => {
       <div ref={ref} className="relative z-0 flex flex-col gap-6 md:gap-12">
         <CarouselItem
           imageUrl='/ygdental.png'
-          bgColor='bg-bloomYellow'
+          bgColor='bg-white'
           scrollYProgress={scrollYProgress}
           position={1}
           numItems={5}
         />
         <CarouselItem
           imageUrl='/docsapoth.png'
-          bgColor='bg-bloomOrange'
+          bgColor='bg-white'
           scrollYProgress={scrollYProgress}
           position={2}
           numItems={5}
         />
         <CarouselItem
         imageUrl='/rentalrealty.png'
-          bgColor='bg-bloomRed'
+          bgColor='bg-white'
           scrollYProgress={scrollYProgress}
           position={3}
           numItems={5}
         />
         <CarouselItem
         imageUrl='/autoaccident.png'
-          bgColor='bg-bloomPurple'
+          bgColor='bg-white'
           scrollYProgress={scrollYProgress}
           position={4}
           numItems={5}
         />
-        <CarouselItem
-        imageUrl='/mhdhero.png'
-          bgColor='bg-bloomPink'
-          scrollYProgress={scrollYProgress}
-          position={5}
-          numItems={5}
-        />
+        
       </div>
 
       <Buffer />

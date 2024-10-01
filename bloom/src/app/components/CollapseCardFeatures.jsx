@@ -14,31 +14,7 @@ import {
 
 const features = [
   {
-    title: "Discovery",
-    Icon: FiUpload,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe deserunt ipsum rerum natus fugit ex minima voluptas ratione quaerat. Ea!",
-  },
-  {
-    title:  "Research",
-    Icon: FiArrowUp,
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, vitae sed? Maxime!",
-  },
-  {
-    title: "Strategy",
-    Icon: FiTarget,
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ab perspiciatis earum quibusdam laudantium non nihil nesciunt?",
-  },
-  {
-    title: "Review/Walkthrough",
-    Icon: FiLink,
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem explicabo nobis officia, nostrum eligendi accusamus unde ad cumque, magnam deleniti adipisci fugiat facere. Veniam?",
-  },
-  {
-    title: "Execute",
+    title: "Celebrate",
     Icon: FiTool,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, saepe quo!",
@@ -50,15 +26,40 @@ const features = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, saepe quo!",
   },
   {
-    title: "Celebrate",
+    title: "Execute",
     Icon: FiTool,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, saepe quo!",
   },
+  {
+    title: "Review/Walkthrough",
+    Icon: FiLink,
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem explicabo nobis officia, nostrum eligendi accusamus unde ad cumque, magnam deleniti adipisci fugiat facere. Veniam?",
+  },
+  {
+    title: "Strategy",
+    Icon: FiTarget,
+    description:
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo ab perspiciatis earum quibusdam laudantium non nihil nesciunt?",
+  },
+  {
+    title: "Research",
+    Icon: FiArrowUp,
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, vitae sed? Maxime!",
+  },
+  {
+    title: "Discovery",
+    Icon: FiUpload,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe deserunt ipsum rerum natus fugit ex minima voluptas ratione quaerat. Ea!",
+  },
 ];
 
+
 const CollapseCardFeatures = () => {
-  const [position, setPosition] = useState(0);
+  const [position, setPosition] = useState(6);
 
   const shiftLeft = () => {
     if (position > 0) {
@@ -73,7 +74,7 @@ const CollapseCardFeatures = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-neutral-950 px-4 py-12">
+    <section id="process" className="overflow-hidden bg-neutral-950 px-4 py-12">
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 flex justify-between gap-4">
           <h2 className="text-4xl font-bold leading-[1.2] md:text-5xl text-white font-righteous">
@@ -82,13 +83,13 @@ const CollapseCardFeatures = () => {
           <div className="flex gap-2">
             <button
               className="h-fit bg-white p-4 text-2xl text-neutral-950 transition-colors hover:bg-bloomOrange"
-              onClick={shiftLeft}
+              onClick={shiftRight}
             >
               <FiChevronLeft />
             </button>
             <button
               className="h-fit bg-white p-4 text-2xl text-neutral-950 transition-colors hover:bg-bloomPink"
-              onClick={shiftRight}
+              onClick={shiftLeft}
             >
               <FiChevronRight />
             </button>

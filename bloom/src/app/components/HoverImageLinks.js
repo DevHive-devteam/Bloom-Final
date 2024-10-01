@@ -1,8 +1,15 @@
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import { useNav } from '../context/NavContext';
+
 
 export const HoverImageLinks = () => {
+
+  const { active, setActive } = useNav();
+
+
+
   return (
     <motion.section
       className="bg-black p-4 md:p-8"
@@ -13,28 +20,28 @@ export const HoverImageLinks = () => {
     >
       <div className="mx-auto max-w-5xl">
         <Link
-          heading="Home"
+          heading="process"
           subheading="Learn what we do here"
-          imgSrc="./11.jpg"
-          href="#"
-        />
-        <Link
-          heading="About"
-          subheading="We work with great people"
-          imgSrc="./6.jpg"
-          href="#"
+          href="#process"
+          onClick={() => setActive((pv) => !pv)}
         />
         <Link
           heading="Services"
-          subheading="Our work speaks for itself"
-          imgSrc="./4.jpg"
-          href="#"
+          subheading="We work with great people"
+          
+          href="#services"
         />
         <Link
           heading="Portfolio"
+          subheading="Our work speaks for itself"
+          
+          href="#portfolio"
+        />
+        <Link
+          heading="Contact"
           subheading="We want cool people"
-          imgSrc="./5.jpg"
-          href="#"
+          
+          href="#footer"
         />
         
       </div>
@@ -111,22 +118,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
         </span>
       </div>
 
-      <motion.img
-        style={{
-          top,
-          left,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        variants={{
-          initial: { scale: 0, rotate: "-12.5deg" },
-          whileHover: { scale: 1, rotate: "12.5deg" },
-        }}
-        transition={{ type: "spring" }}
-        src={imgSrc}
-        className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
-        alt={`Image representing a link for ${heading}`}
-      />
+      
 
       <motion.div
         variants={{

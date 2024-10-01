@@ -67,6 +67,7 @@ export const GridHoverHero = () => {
       <div
         ref={scope}
         className="grid h-screen w-full grid-cols-[repeat(auto-fit,_minmax(75px,_1fr))] grid-rows-[repeat(auto-fit,_minmax(75px,_1fr))]"
+        id="hero"
       >
         {[...Array(size.rows * size.columns)].map((_, i) => (
           <div
